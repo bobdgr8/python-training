@@ -1,0 +1,10 @@
+def toStr(n, base):
+	convertString = "0123456789ABCDEF"
+	if n < base:
+		return convertString[n]
+	else:
+		return toStr(n//base, base) + convertString[n%base]
+	
+num = int(input("Enter number in decimal:"))
+base = int(input("Enter Base:"))
+print(num, "in base", base, "is", toStr(num, base))
